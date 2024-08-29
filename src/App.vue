@@ -1,5 +1,7 @@
 <script setup>
 import { ref } from "vue";
+import { toast } from 'vue3-toastify';
+import 'vue3-toastify/dist/index.css';
 
 const title = ref("");
 
@@ -21,8 +23,10 @@ const addNewTask = () => {
   };
 
   if(task.title.trim().length==0){
-    console.log('pls fill');
-    
+    toast.warning("Please, fill input !", {
+        autoClose: 1000,
+        "position":"top-center"
+      })
   } else{
     todo.value.push(task);
     title.value = ""; 
@@ -35,6 +39,10 @@ const addNewTask = () => {
 const deleteTask=(id)=>{
   const tasks=todo.value.filter((el)=>el.id !== id)
   todo.value = tasks
+  toast("Task deleted !", {
+        autoClose: 1000,
+        "position":"top-center"
+      })
 }
 
 
@@ -43,6 +51,10 @@ const setStatus=(id)=>{
  todo.value.forEach(el=>{
   if(el.id== id){
     el.isDone=true
+    toast.success("Set status!", {
+        autoClose: 1000,
+        "position":"top-center"
+      })
   }
  })
 }
