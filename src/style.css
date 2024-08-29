@@ -1,0 +1,31 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+button{
+  cursor: pointer;
+}
+
+body{
+  font-family: "Poppins", system-ui;
+  font-weight: 500;
+  font-style: normal;
+   background-color: rgb(169, 206, 238);
+}
+
+
+
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
